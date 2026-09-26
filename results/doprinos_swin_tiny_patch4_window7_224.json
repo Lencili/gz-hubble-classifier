@@ -1,0 +1,42 @@
+{
+  "barred_spiral": {
+    "original": 0.67814,
+    "gamma": 0.01884,
+    "contrast": 0.05598,
+    "highpass": 0.03059,
+    "equalize": 0.17895,
+    "sharpen": 0.0375
+  },
+  "edge_on_disk": {
+    "original": 0.70152,
+    "gamma": 0.02011,
+    "contrast": 0.05801,
+    "highpass": 0.03101,
+    "equalize": 0.15141,
+    "sharpen": 0.03794
+  },
+  "smooth_cigar": {
+    "original": 0.71439,
+    "gamma": 0.02013,
+    "contrast": 0.0543,
+    "highpass": 0.03202,
+    "equalize": 0.14029,
+    "sharpen": 0.03887
+  },
+  "smooth_round": {
+    "original": 0.71701,
+    "gamma": 0.02044,
+    "contrast": 0.05396,
+    "highpass": 0.03193,
+    "equalize": 0.13775,
+    "sharpen": 0.03891
+  },
+  "unbarred_spiral": {
+    "original": 0.66241,
+    "gamma": 0.01988,
+    "contrast": 0.06134,
+    "highpass": 0.02996,
+    "equalize": 0.18974,
+    "sharpen": 0.03668
+  }
+}

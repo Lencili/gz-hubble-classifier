@@ -1,0 +1,18 @@
+{
+  "train": {
+    "smooth_round": 10974,
+    "smooth_cigar": 9856,
+    "unbarred_spiral": 2856,
+    "barred_spiral": 701,
+    "edge_on_disk": 579,
+    "featured_without_bar_or_spiral": 61
+  },
+  "test": {
+    "smooth_round": 2743,
+    "smooth_cigar": 2483,
+    "unbarred_spiral": 733,
+    "barred_spiral": 183,
+    "edge_on_disk": 161,
+    "featured_without_bar_or_spiral": 16
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "dataset_id": "mwalmsley/gz_hubble",
+  "source": "parquet_api",
+  "config": "default",
+  "seed": 42,
+  "per_class": {
+    "train": 450,
+    "val": 100,
+    "test": 150
+  },
+  "labels": [
+    "barred_spiral",
+    "edge_on_disk",
+    "smooth_cigar",
+    "smooth_round",
+    "unbarred_spiral"
+  ],
+  "counts": {
+    "train": {
+      "edge_on_disk": 450,
+      "barred_spiral": 450,
+      "smooth_cigar": 450,
+      "unbarred_spiral": 450,
+      "smooth_round": 450
+    },
+    "val": {
+      "edge_on_disk": 100,
+      "unbarred_spiral": 100,
+      "barred_spiral": 100,
+      "smooth_round": 100,
+      "smooth_cigar": 100
+    },
+    "test": {
+      "unbarred_spiral": 150,
+      "edge_on_disk": 150,
+      "barred_spiral": 150,
+      "smooth_round": 150,
+      "smooth_cigar": 150
+    }
+  },
+  "available_in_source": {
+    "barred_spiral": {
+      "train": 701,
+      "eval": 183
+    },
+    "edge_on_disk": {
+      "train": 579,
+      "eval": 161
+    },
+    "featured_without_bar_or_spiral": {
+      "train": 61,
+      "eval": 16
+    },
+    "smooth_cigar": {
+      "train": 9856,
+      "eval": 2483
+    },
+    "smooth_round": {
+      "train": 10974,
+      "eval": 2743
+    },
+    "unbarred_spiral": {
+      "train": 2856,
+      "eval": 733
+    }
+  },
+  "dropped_labels": {
+    "featured_without_bar_or_spiral": {
+      "train": 61,
+      "eval": 16
+    }
+  }
+}

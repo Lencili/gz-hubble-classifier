@@ -1,0 +1,611 @@
+{
+  "deit_tiny_patch16_224": {
+    "osnovna": {
+      "acc": 0.78,
+      "macro_f1": 0.7774703801506017,
+      "f1_po_klasi": {
+        "barred_spiral": 0.563265306122449,
+        "edge_on_disk": 0.8456375838926175,
+        "smooth_cigar": 0.8698630136986302,
+        "smooth_round": 0.9364548494983278,
+        "unbarred_spiral": 0.6721311475409836
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.21866666666666668,
+        "macro_f1": 0.1284220206217293,
+        "f1_po_klasi": {
+          "barred_spiral": 0.012903225806451613,
+          "edge_on_disk": 0.06451612903225806,
+          "smooth_cigar": 0.0,
+          "smooth_round": 0.32981530343007914,
+          "unbarred_spiral": 0.23487544483985764
+        },
+        "pad_macro_f1": 0.6490483595288723
+      },
+      "gamma": {
+        "acc": 0.78,
+        "macro_f1": 0.7751132782132062,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5462184873949579,
+          "edge_on_disk": 0.8410596026490066,
+          "smooth_cigar": 0.8639455782312925,
+          "smooth_round": 0.9431438127090301,
+          "unbarred_spiral": 0.6811989100817438
+        },
+        "pad_macro_f1": 0.002357101937395467
+      },
+      "contrast": {
+        "acc": 0.7813333333333333,
+        "macro_f1": 0.7766865851982574,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5523012552301255,
+          "edge_on_disk": 0.847682119205298,
+          "smooth_cigar": 0.8707482993197279,
+          "smooth_round": 0.9368770764119602,
+          "unbarred_spiral": 0.6758241758241759
+        },
+        "pad_macro_f1": 0.0007837949523442633
+      },
+      "highpass": {
+        "acc": 0.78,
+        "macro_f1": 0.7777330207572034,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5691056910569106,
+          "edge_on_disk": 0.8504983388704319,
+          "smooth_cigar": 0.8689655172413793,
+          "smooth_round": 0.9297658862876255,
+          "unbarred_spiral": 0.6703296703296703
+        },
+        "pad_macro_f1": -0.0002626406066017495
+      },
+      "equalize": {
+        "acc": 0.656,
+        "macro_f1": 0.6584104676454174,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5851851851851851,
+          "edge_on_disk": 0.727810650887574,
+          "smooth_cigar": 0.6036036036036037,
+          "smooth_round": 0.78125,
+          "unbarred_spiral": 0.5942028985507246
+        },
+        "pad_macro_f1": 0.11905991250518422
+      },
+      "sharpen": {
+        "acc": 0.7773333333333333,
+        "macro_f1": 0.7754329961503971,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5645161290322581,
+          "edge_on_disk": 0.8378378378378378,
+          "smooth_cigar": 0.8698630136986302,
+          "smooth_round": 0.9364548494983278,
+          "unbarred_spiral": 0.6684931506849315
+        },
+        "pad_macro_f1": 0.0020373840002045895
+      }
+    }
+  },
+  "densenet121": {
+    "osnovna": {
+      "acc": 0.8453333333333334,
+      "macro_f1": 0.8436952570504103,
+      "f1_po_klasi": {
+        "barred_spiral": 0.762962962962963,
+        "edge_on_disk": 0.847682119205298,
+        "smooth_cigar": 0.8666666666666667,
+        "smooth_round": 0.9612903225806452,
+        "unbarred_spiral": 0.779874213836478
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.3626666666666667,
+        "macro_f1": 0.21103483485475544,
+        "f1_po_klasi": {
+          "barred_spiral": 0.013245033112582781,
+          "edge_on_disk": 0.49081803005008345,
+          "smooth_cigar": 0.0,
+          "smooth_round": 0.5511111111111111,
+          "unbarred_spiral": 0.0
+        },
+        "pad_macro_f1": 0.6326604221956549
+      },
+      "gamma": {
+        "acc": 0.8413333333333334,
+        "macro_f1": 0.8397986037249334,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7555555555555555,
+          "edge_on_disk": 0.847682119205298,
+          "smooth_cigar": 0.8666666666666667,
+          "smooth_round": 0.9579288025889967,
+          "unbarred_spiral": 0.7711598746081505
+        },
+        "pad_macro_f1": 0.00389665332547684
+      },
+      "contrast": {
+        "acc": 0.8466666666666667,
+        "macro_f1": 0.8450115463876452,
+        "f1_po_klasi": {
+          "barred_spiral": 0.762962962962963,
+          "edge_on_disk": 0.8504983388704319,
+          "smooth_cigar": 0.8704318936877077,
+          "smooth_round": 0.9612903225806452,
+          "unbarred_spiral": 0.779874213836478
+        },
+        "pad_macro_f1": -0.0013162893372349327
+      },
+      "highpass": {
+        "acc": 0.8453333333333334,
+        "macro_f1": 0.843597734006148,
+        "f1_po_klasi": {
+          "barred_spiral": 0.753731343283582,
+          "edge_on_disk": 0.847682119205298,
+          "smooth_cigar": 0.8695652173913043,
+          "smooth_round": 0.9644012944983819,
+          "unbarred_spiral": 0.782608695652174
+        },
+        "pad_macro_f1": 9.752304426224878e-05
+      },
+      "equalize": {
+        "acc": 0.852,
+        "macro_f1": 0.8513153486524139,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7545787545787546,
+          "edge_on_disk": 0.8686868686868687,
+          "smooth_cigar": 0.8888888888888888,
+          "smooth_round": 0.9639344262295082,
+          "unbarred_spiral": 0.7804878048780488
+        },
+        "pad_macro_f1": -0.007620091602003609
+      },
+      "sharpen": {
+        "acc": 0.8386666666666667,
+        "macro_f1": 0.8364844413957864,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7279693486590039,
+          "edge_on_disk": 0.8466666666666667,
+          "smooth_cigar": 0.8733333333333333,
+          "smooth_round": 0.961038961038961,
+          "unbarred_spiral": 0.7734138972809668
+        },
+        "pad_macro_f1": 0.007210815654623892
+      }
+    }
+  },
+  "efficientnet_b0": {
+    "osnovna": {
+      "acc": 0.8013333333333333,
+      "macro_f1": 0.7997687328537955,
+      "f1_po_klasi": {
+        "barred_spiral": 0.6714285714285714,
+        "edge_on_disk": 0.8311688311688312,
+        "smooth_cigar": 0.8472222222222222,
+        "smooth_round": 0.9483870967741935,
+        "unbarred_spiral": 0.7006369426751592
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.16266666666666665,
+        "macro_f1": 0.07146666666666666,
+        "f1_po_klasi": {
+          "barred_spiral": 0.0,
+          "edge_on_disk": 0.304,
+          "smooth_cigar": 0.0,
+          "smooth_round": 0.05333333333333334,
+          "unbarred_spiral": 0.0
+        },
+        "pad_macro_f1": 0.7283020661871288
+      },
+      "gamma": {
+        "acc": 0.7946666666666666,
+        "macro_f1": 0.7927872785063651,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6761565836298933,
+          "edge_on_disk": 0.819672131147541,
+          "smooth_cigar": 0.8384879725085911,
+          "smooth_round": 0.939297124600639,
+          "unbarred_spiral": 0.6903225806451613
+        },
+        "pad_macro_f1": 0.00698145434743036
+      },
+      "contrast": {
+        "acc": 0.7973333333333333,
+        "macro_f1": 0.7955784722567071,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6736111111111112,
+          "edge_on_disk": 0.8514851485148515,
+          "smooth_cigar": 0.863013698630137,
+          "smooth_round": 0.9142857142857143,
+          "unbarred_spiral": 0.6754966887417219
+        },
+        "pad_macro_f1": 0.00419026059708838
+      },
+      "highpass": {
+        "acc": 0.7933333333333333,
+        "macro_f1": 0.7924600245957139,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6666666666666666,
+          "edge_on_disk": 0.8361204013377926,
+          "smooth_cigar": 0.8620689655172413,
+          "smooth_round": 0.9201277955271565,
+          "unbarred_spiral": 0.6773162939297125
+        },
+        "pad_macro_f1": 0.007308708258081609
+      },
+      "equalize": {
+        "acc": 0.796,
+        "macro_f1": 0.7934955749723035,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6877192982456141,
+          "edge_on_disk": 0.8275862068965517,
+          "smooth_cigar": 0.8514851485148515,
+          "smooth_round": 0.9096573208722741,
+          "unbarred_spiral": 0.6910299003322259
+        },
+        "pad_macro_f1": 0.006273157881491964
+      },
+      "sharpen": {
+        "acc": 0.7906666666666666,
+        "macro_f1": 0.7896191136863054,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6643356643356644,
+          "edge_on_disk": 0.8322147651006712,
+          "smooth_cigar": 0.8591065292096219,
+          "smooth_round": 0.9171974522292994,
+          "unbarred_spiral": 0.6752411575562701
+        },
+        "pad_macro_f1": 0.01014961916749002
+      }
+    }
+  },
+  "mobilenet_v3_small": {
+    "osnovna": {
+      "acc": 0.7413333333333333,
+      "macro_f1": 0.7334582065575009,
+      "f1_po_klasi": {
+        "barred_spiral": 0.6111111111111112,
+        "edge_on_disk": 0.8155339805825242,
+        "smooth_cigar": 0.8157894736842105,
+        "smooth_round": 0.8693009118541033,
+        "unbarred_spiral": 0.5555555555555556
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.232,
+        "macro_f1": 0.1341247249308542,
+        "f1_po_klasi": {
+          "barred_spiral": 0.023391812865497075,
+          "edge_on_disk": 0.3037974683544304,
+          "smooth_cigar": 0.0,
+          "smooth_round": 0.3434343434343434,
+          "unbarred_spiral": 0.0
+        },
+        "pad_macro_f1": 0.5993334816266467
+      },
+      "gamma": {
+        "acc": 0.7373333333333333,
+        "macro_f1": 0.7300986994995788,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5910652920962199,
+          "edge_on_disk": 0.8220064724919094,
+          "smooth_cigar": 0.8172757475083057,
+          "smooth_round": 0.88,
+          "unbarred_spiral": 0.5401459854014599
+        },
+        "pad_macro_f1": 0.0033595070579220954
+      },
+      "contrast": {
+        "acc": 0.748,
+        "macro_f1": 0.7406976530262466,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6232876712328768,
+          "edge_on_disk": 0.8349514563106796,
+          "smooth_cigar": 0.8211920529801324,
+          "smooth_round": 0.8685015290519877,
+          "unbarred_spiral": 0.5555555555555556
+        },
+        "pad_macro_f1": -0.007239446468745636
+      },
+      "highpass": {
+        "acc": 0.7386666666666667,
+        "macro_f1": 0.7309304931376432,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6220735785953178,
+          "edge_on_disk": 0.8129032258064516,
+          "smooth_cigar": 0.8106312292358804,
+          "smooth_round": 0.8711656441717791,
+          "unbarred_spiral": 0.5378787878787878
+        },
+        "pad_macro_f1": 0.002527713419857691
+      },
+      "equalize": {
+        "acc": 0.732,
+        "macro_f1": 0.7197377897728889,
+        "f1_po_klasi": {
+          "barred_spiral": 0.617737003058104,
+          "edge_on_disk": 0.8106312292358804,
+          "smooth_cigar": 0.8102893890675241,
+          "smooth_round": 0.8834355828220859,
+          "unbarred_spiral": 0.4765957446808511
+        },
+        "pad_macro_f1": 0.013720416784612
+      },
+      "sharpen": {
+        "acc": 0.7373333333333333,
+        "macro_f1": 0.7293659109525599,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6195286195286195,
+          "edge_on_disk": 0.8102893890675241,
+          "smooth_cigar": 0.8106312292358804,
+          "smooth_round": 0.8685015290519877,
+          "unbarred_spiral": 0.5378787878787878
+        },
+        "pad_macro_f1": 0.004092295604941065
+      }
+    }
+  },
+  "resnet18": {
+    "osnovna": {
+      "acc": 0.8373333333333334,
+      "macro_f1": 0.837365419028532,
+      "f1_po_klasi": {
+        "barred_spiral": 0.7164179104477612,
+        "edge_on_disk": 0.8701298701298701,
+        "smooth_cigar": 0.9023569023569024,
+        "smooth_round": 0.9591836734693877,
+        "unbarred_spiral": 0.7387387387387387
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.30666666666666664,
+        "macro_f1": 0.23098380696757975,
+        "f1_po_klasi": {
+          "barred_spiral": 0.38058748403575987,
+          "edge_on_disk": 0.4,
+          "smooth_cigar": 0.0,
+          "smooth_round": 0.37433155080213903,
+          "unbarred_spiral": 0.0
+        },
+        "pad_macro_f1": 0.6063816120609522
+      },
+      "gamma": {
+        "acc": 0.836,
+        "macro_f1": 0.8360605774324282,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7164179104477612,
+          "edge_on_disk": 0.8673139158576052,
+          "smooth_cigar": 0.8986486486486487,
+          "smooth_round": 0.9591836734693877,
+          "unbarred_spiral": 0.7387387387387387
+        },
+        "pad_macro_f1": 0.0013048415961037785
+      },
+      "contrast": {
+        "acc": 0.8266666666666667,
+        "macro_f1": 0.825889017479154,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6870229007633588,
+          "edge_on_disk": 0.8599348534201955,
+          "smooth_cigar": 0.8933333333333333,
+          "smooth_round": 0.9591836734693877,
+          "unbarred_spiral": 0.7299703264094956
+        },
+        "pad_macro_f1": 0.011476401549378012
+      },
+      "highpass": {
+        "acc": 0.832,
+        "macro_f1": 0.8311807766375857,
+        "f1_po_klasi": {
+          "barred_spiral": 0.671875,
+          "edge_on_disk": 0.8789808917197452,
+          "smooth_cigar": 0.9072164948453608,
+          "smooth_round": 0.9621993127147767,
+          "unbarred_spiral": 0.735632183908046
+        },
+        "pad_macro_f1": 0.006184642390946293
+      },
+      "equalize": {
+        "acc": 0.8253333333333334,
+        "macro_f1": 0.8234970002901317,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6901960784313725,
+          "edge_on_disk": 0.8625,
+          "smooth_cigar": 0.8865979381443299,
+          "smooth_round": 0.9498327759197325,
+          "unbarred_spiral": 0.7283582089552239
+        },
+        "pad_macro_f1": 0.013868418738400279
+      },
+      "sharpen": {
+        "acc": 0.8186666666666667,
+        "macro_f1": 0.8175635193957186,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6532258064516129,
+          "edge_on_disk": 0.8668730650154799,
+          "smooth_cigar": 0.8865248226950354,
+          "smooth_round": 0.9513888888888888,
+          "unbarred_spiral": 0.7298050139275766
+        },
+        "pad_macro_f1": 0.019801899632813424
+      }
+    }
+  },
+  "swin_tiny_patch4_window7_224": {
+    "osnovna": {
+      "acc": 0.836,
+      "macro_f1": 0.8370385531718021,
+      "f1_po_klasi": {
+        "barred_spiral": 0.7631578947368421,
+        "edge_on_disk": 0.8482758620689655,
+        "smooth_cigar": 0.8673139158576052,
+        "smooth_round": 0.958904109589041,
+        "unbarred_spiral": 0.7475409836065574
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.284,
+        "macro_f1": 0.21165226063829787,
+        "f1_po_klasi": {
+          "barred_spiral": 0.0,
+          "edge_on_disk": 0.0,
+          "smooth_cigar": 0.32421875,
+          "smooth_round": 0.48404255319148937,
+          "unbarred_spiral": 0.25
+        },
+        "pad_macro_f1": 0.6253862925335042
+      },
+      "gamma": {
+        "acc": 0.8333333333333334,
+        "macro_f1": 0.8343011661599486,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7631578947368421,
+          "edge_on_disk": 0.8413793103448276,
+          "smooth_cigar": 0.8580645161290322,
+          "smooth_round": 0.958904109589041,
+          "unbarred_spiral": 0.75
+        },
+        "pad_macro_f1": 0.0027373870118534427
+      },
+      "contrast": {
+        "acc": 0.8213333333333334,
+        "macro_f1": 0.822524489432738,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7344262295081967,
+          "edge_on_disk": 0.847682119205298,
+          "smooth_cigar": 0.8533333333333334,
+          "smooth_round": 0.9553264604810997,
+          "unbarred_spiral": 0.7218543046357616
+        },
+        "pad_macro_f1": 0.014514063739064054
+      },
+      "highpass": {
+        "acc": 0.8333333333333334,
+        "macro_f1": 0.8341189717840637,
+        "f1_po_klasi": {
+          "barred_spiral": 0.759075907590759,
+          "edge_on_disk": 0.8409893992932862,
+          "smooth_cigar": 0.8670886075949367,
+          "smooth_round": 0.962457337883959,
+          "unbarred_spiral": 0.740983606557377
+        },
+        "pad_macro_f1": 0.0029195813877384014
+      },
+      "equalize": {
+        "acc": 0.7853333333333333,
+        "macro_f1": 0.7871175344101563,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7050847457627119,
+          "edge_on_disk": 0.8141025641025641,
+          "smooth_cigar": 0.8421052631578947,
+          "smooth_round": 0.8865979381443299,
+          "unbarred_spiral": 0.6876971608832808
+        },
+        "pad_macro_f1": 0.049921018761645786
+      },
+      "sharpen": {
+        "acc": 0.8293333333333334,
+        "macro_f1": 0.8304302704769417,
+        "f1_po_klasi": {
+          "barred_spiral": 0.7574750830564784,
+          "edge_on_disk": 0.833922261484099,
+          "smooth_cigar": 0.8634920634920635,
+          "smooth_round": 0.9553264604810997,
+          "unbarred_spiral": 0.7419354838709677
+        },
+        "pad_macro_f1": 0.006608282694860357
+      }
+    }
+  },
+  "vit_tiny_patch16_224": {
+    "osnovna": {
+      "acc": 0.772,
+      "macro_f1": 0.7661515880079266,
+      "f1_po_klasi": {
+        "barred_spiral": 0.6198347107438017,
+        "edge_on_disk": 0.7973856209150327,
+        "smooth_cigar": 0.825938566552901,
+        "smooth_round": 0.8950617283950617,
+        "unbarred_spiral": 0.6925373134328359
+      }
+    },
+    "bez": {
+      "original": {
+        "acc": 0.22933333333333333,
+        "macro_f1": 0.1613299020441293,
+        "f1_po_klasi": {
+          "barred_spiral": 0.08602150537634409,
+          "edge_on_disk": 0.2696629213483146,
+          "smooth_cigar": 0.12643678160919541,
+          "smooth_round": 0.0,
+          "unbarred_spiral": 0.32452830188679244
+        },
+        "pad_macro_f1": 0.6048216859637973
+      },
+      "gamma": {
+        "acc": 0.768,
+        "macro_f1": 0.7617490287149623,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6141078838174274,
+          "edge_on_disk": 0.7896440129449838,
+          "smooth_cigar": 0.825938566552901,
+          "smooth_round": 0.8923076923076924,
+          "unbarred_spiral": 0.6867469879518072
+        },
+        "pad_macro_f1": 0.004402559292964292
+      },
+      "contrast": {
+        "acc": 0.7666666666666667,
+        "macro_f1": 0.7595658044666853,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5966386554621849,
+          "edge_on_disk": 0.7935483870967742,
+          "smooth_cigar": 0.8287671232876712,
+          "smooth_round": 0.8923076923076924,
+          "unbarred_spiral": 0.6865671641791045
+        },
+        "pad_macro_f1": 0.006585783541241286
+      },
+      "highpass": {
+        "acc": 0.7733333333333333,
+        "macro_f1": 0.7674612773418745,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6285714285714286,
+          "edge_on_disk": 0.7987012987012987,
+          "smooth_cigar": 0.8299319727891157,
+          "smooth_round": 0.8868501529051988,
+          "unbarred_spiral": 0.6932515337423313
+        },
+        "pad_macro_f1": -0.0013096893339479276
+      },
+      "equalize": {
+        "acc": 0.7346666666666667,
+        "macro_f1": 0.7302764770370658,
+        "f1_po_klasi": {
+          "barred_spiral": 0.5931558935361216,
+          "edge_on_disk": 0.7784090909090909,
+          "smooth_cigar": 0.7389558232931727,
+          "smooth_round": 0.8701298701298701,
+          "unbarred_spiral": 0.6707317073170732
+        },
+        "pad_macro_f1": 0.035875110970860824
+      },
+      "sharpen": {
+        "acc": 0.772,
+        "macro_f1": 0.7659402695867606,
+        "f1_po_klasi": {
+          "barred_spiral": 0.6229508196721312,
+          "edge_on_disk": 0.7961165048543689,
+          "smooth_cigar": 0.8299319727891157,
+          "smooth_round": 0.8895705521472392,
+          "unbarred_spiral": 0.691131498470948
+        },
+        "pad_macro_f1": 0.00021131842116595134
+      }
+    }
+  }
+}

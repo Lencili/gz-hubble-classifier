@@ -1,0 +1,38 @@
+# virtual environments
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# data and model weights (regenerate with prepare_dataset / train)
+data/
+models/
+outputs/
+outputs_*/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# archives and scratch
+*.zip
+*.tgz
+*.tar.gz
+_originalni_kod/
+_raspakovano_visak/
+_privremeno/
+_to_delete/
+_test*/
+wandb/
+
+# os
+.DS_Store
+Thumbs.db
+desktop.ini
