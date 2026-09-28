@@ -81,12 +81,14 @@ def parse_cli() -> argparse.Namespace:
     return parser.parse_known_args()[0]
 
 
-@st.cache_resource(show_spinner="Preuzimam model sa Hugging Face Hub-a...")
+@st.cache_resource(show_spinner="Preuzimam modele sa Hugging Face Hub-a...")
 def preuzmi_model_sa_huba() -> str:
-    """Na serveru model stize sa Hub-a; lokalno se ne radi nista.
+    """Na serveru modeli stizu sa Hub-a; lokalno se ne radi nista.
 
-    Ukljucuje se promenljivom GZ_MODEL_REPO (npr. "korisnik/gz-hubble-densenet121").
+    GZ_MODEL_REPO zadaje repozitorijum na Hub-u, a GZ_RUNS spisak runova u njemu,
+    razdvojen zarezima (svaki run je podfolder, npr. "densenet121_multimodal").
     Fajlovi se smestaju u outputs_space/<run>/, pa ih zatim nalazi discover_runs().
+    Ako GZ_RUNS nije zadat, uzima se jedan run iz korena repozitorijuma.
     """
     repo = os.environ.get("GZ_MODEL_REPO", "").strip()
     if not repo:
@@ -94,20 +96,29 @@ def preuzmi_model_sa_huba() -> str:
 
     from huggingface_hub import hf_hub_download
 
-    cilj = Path("outputs_space") / os.environ.get("GZ_RUN_NAME", "densenet121_multimodal")
-    cilj.mkdir(parents=True, exist_ok=True)
-    for ime, obavezan in (("best.ckpt", True), ("metrics.json", True),
-                          ("history.json", False), ("labels.json", False)):
-        odrediste = cilj / ime
-        if odrediste.exists():
-            continue
-        try:
-            shutil.copy(hf_hub_download(repo_id=repo, filename=ime), odrediste)
-        except Exception as greska:
-            if obavezan:
-                st.error(f"Ne mogu da preuzmem {ime} iz repozitorijuma {repo}: {greska}")
-                return ""
-    return str(cilj / "best.ckpt")
+    runovi = [r.strip() for r in os.environ.get("GZ_RUNS", "").split(",") if r.strip()]
+    u_podfolderima = bool(runovi)
+    if not runovi:
+        runovi = [os.environ.get("GZ_RUN_NAME", "densenet121_multimodal")]
+
+    prvi = ""
+    for run in runovi:
+        cilj = Path("outputs_space") / run
+        cilj.mkdir(parents=True, exist_ok=True)
+        for ime, obavezan in (("best.ckpt", True), ("metrics.json", True),
+                              ("history.json", False), ("labels.json", False)):
+            odrediste = cilj / ime
+            if odrediste.exists():
+                continue
+            putanja = f"{run}/{ime}" if u_podfolderima else ime
+            try:
+                shutil.copy(hf_hub_download(repo_id=repo, filename=putanja), odrediste)
+            except Exception as greska:
+                if obavezan:
+                    st.error(f"Ne mogu da preuzmem {putanja} iz repozitorijuma {repo}: {greska}")
+                    break
+        prvi = prvi or str(cilj / "best.ckpt")
+    return prvi
 
 
 BEZ_CKPT = "  (bez checkpointa)"
