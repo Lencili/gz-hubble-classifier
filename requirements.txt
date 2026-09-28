@@ -1,15 +1,14 @@
-datasets>=2.20.0
-evaluate>=0.4.2
-gradio>=4.44.0
-matplotlib>=3.8.0
-numpy>=1.26.0
-opencv-python>=4.9.0.80
-pillow>=10.2.0
-requests>=2.32.2
-scikit-learn>=1.4.0
-streamlit>=1.36.0
-timm>=1.0.7
-torch>=2.3.0
-torchvision>=0.18.0
-tqdm>=4.66.0
-transformers>=4.43.0
+# Streamlit Community Cloud (Linux, Python 3.11).
+# Sufiks +cpu postoji samo na PyTorch CPU indeksu, pa pip ne moze da povuce
+# CUDA verziju sa PyPI-ja (koja je oko 2.5 GB i ne stane u besplatni nivo).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1+cpu
+torchvision==0.19.1+cpu
+streamlit==1.39.0
+timm==1.0.9
+opencv-python-headless==4.10.0.84
+pillow==10.4.0
+numpy==1.26.4
+pandas==2.2.3
+requests==2.32.3
+huggingface_hub==0.25.2

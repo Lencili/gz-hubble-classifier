@@ -3,19 +3,22 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import os
+import shutil
 from pathlib import Path
 
 import pandas as pd
 from PIL import Image
 import streamlit as st
 import torch
-from transformers import CLIPModel, CLIPProcessor
 
 from src.gz_classifier.data import build_local_label_info, load_local_samples
 from src.gz_classifier.explain import explain_image, modality_attribution
 from src.gz_classifier.infer import GalaxyPredictor, load_predictor
 from src.gz_classifier.modalities import apply_modality
-from src.gz_classifier.zeroshot import prompts_for
+
+# transformers, sklearn i zeroshot se uvoze tek kad se CLIP zaista koristi, da
+# se na serveru bez CLIP modela ti paketi uopste ne instaliraju.
 
 
 DEFAULT_LABELS = [
@@ -35,7 +38,9 @@ def cached_predictor(checkpoint: str | None) -> GalaxyPredictor | None:
 
 
 @st.cache_resource
-def cached_clip(model_path: str) -> tuple[CLIPModel, CLIPProcessor, torch.device]:
+def cached_clip(model_path: str) -> tuple["CLIPModel", "CLIPProcessor", torch.device]:
+    from transformers import CLIPModel, CLIPProcessor
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = CLIPModel.from_pretrained(model_path, local_files_only=True).to(device).eval()
     processor = CLIPProcessor.from_pretrained(model_path, local_files_only=True)
@@ -43,6 +48,8 @@ def cached_clip(model_path: str) -> tuple[CLIPModel, CLIPProcessor, torch.device
 
 
 def clip_predict(image: Image.Image, labels: list[str], model_path: str, top_k: int = 5) -> list[dict[str, float | str]]:
+    from src.gz_classifier.zeroshot import prompts_for
+
     model, processor, device = cached_clip(model_path)
     prompts = [prompt for label in labels for prompt in prompts_for(label)]
     label_ids = [index for index, label in enumerate(labels) for _ in prompts_for(label)]
@@ -59,12 +66,48 @@ def clip_predict(image: Image.Image, labels: list[str], model_path: str, top_k: 
 
 
 def parse_cli() -> argparse.Namespace:
+    """Argumenti komandne linije, sa podrazumevanim vrednostima iz okruzenja.
+
+    Lokalno se i dalje pokrece sa `--checkpoint ... --data-dir ...`, a na
+    serveru (Hugging Face Spaces) se ista podesavanja zadaju kao promenljive
+    okruzenja. Izricit argument uvek ima prednost nad promenljivom.
+    """
     parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--checkpoint", default="")
-    parser.add_argument("--data-dir", default="data/gz_hubble_500")
-    parser.add_argument("--report-dir", default="")
-    parser.add_argument("--clip-model", default="models/clip-vit-base-patch32")
+    parser.add_argument("--checkpoint", default=os.environ.get("GZ_CHECKPOINT", ""))
+    parser.add_argument("--data-dir", default=os.environ.get("GZ_DATA_DIR", "data/gz_hubble_500"))
+    parser.add_argument("--report-dir", default=os.environ.get("GZ_REPORT_DIR", ""))
+    parser.add_argument("--clip-model",
+                        default=os.environ.get("GZ_CLIP_MODEL", "models/clip-vit-base-patch32"))
     return parser.parse_known_args()[0]
+
+
+@st.cache_resource(show_spinner="Preuzimam model sa Hugging Face Hub-a...")
+def preuzmi_model_sa_huba() -> str:
+    """Na serveru model stize sa Hub-a; lokalno se ne radi nista.
+
+    Ukljucuje se promenljivom GZ_MODEL_REPO (npr. "korisnik/gz-hubble-densenet121").
+    Fajlovi se smestaju u outputs_space/<run>/, pa ih zatim nalazi discover_runs().
+    """
+    repo = os.environ.get("GZ_MODEL_REPO", "").strip()
+    if not repo:
+        return ""
+
+    from huggingface_hub import hf_hub_download
+
+    cilj = Path("outputs_space") / os.environ.get("GZ_RUN_NAME", "densenet121_multimodal")
+    cilj.mkdir(parents=True, exist_ok=True)
+    for ime, obavezan in (("best.ckpt", True), ("metrics.json", True),
+                          ("history.json", False), ("labels.json", False)):
+        odrediste = cilj / ime
+        if odrediste.exists():
+            continue
+        try:
+            shutil.copy(hf_hub_download(repo_id=repo, filename=ime), odrediste)
+        except Exception as greska:
+            if obavezan:
+                st.error(f"Ne mogu da preuzmem {ime} iz repozitorijuma {repo}: {greska}")
+                return ""
+    return str(cilj / "best.ckpt")
 
 
 BEZ_CKPT = "  (bez checkpointa)"
@@ -426,6 +469,7 @@ def main() -> None:
     st.set_page_config(page_title="Galaxy Classifier", page_icon="*", layout="wide")
     st.title("Galaxy Classifier")
 
+    preuzmi_model_sa_huba()
     runs = discover_runs()
     selected_run: str | None = None
     checkpoint = args.checkpoint or ""

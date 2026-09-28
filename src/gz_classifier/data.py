@@ -9,10 +9,14 @@ import re
 from io import BytesIO
 from typing import Iterable
 
-from datasets import Dataset, load_dataset
+try:  # datasets i pyarrow trebaju samo za preuzimanje izvorne zbirke,
+    from datasets import Dataset, load_dataset  # ne i za rad nad lokalnim slikama
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+except ImportError:  # okruzenje samo za inferencu (npr. Hugging Face Spaces)
+    Dataset = object  # type: ignore[assignment,misc]
+    load_dataset = pa = pq = None  # type: ignore[assignment]
 import numpy as np
-import pyarrow as pa
-import pyarrow.parquet as pq
 import requests
 from PIL import Image
 import torch
